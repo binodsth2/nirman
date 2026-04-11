@@ -1,0 +1,1 @@
+# TODO: Fix db:generate script&#10;&#10;✅ [DONE] Edit package.json to add Prisma scripts (db:generate, db:push, db:migrate, db:studio)&#10;&#10;Next steps:&#10;- Run `npm run` to verify scripts&#10;- Run `npm run db:generate` to generate Prisma Client&#10;- Run `npm run db:push` to sync schema to DB (uses your DATABASE_URL)&#10;- Open Prisma Studio: `npm run db:studio`

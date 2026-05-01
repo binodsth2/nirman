@@ -1,1 +1,10 @@
-# TODO: Fix db:generate script&#10;&#10;✅ [DONE] Edit package.json to add Prisma scripts (db:generate, db:push, db:migrate, db:studio)&#10;&#10;Next steps:&#10;- Run `npm run` to verify scripts&#10;- Run `npm run db:generate` to generate Prisma Client&#10;- Run `npm run db:push` to sync schema to DB (uses your DATABASE_URL)&#10;- Open Prisma Studio: `npm run db:studio`
+# TODO: Fix Nllm page and TypeScript errors
+
+## Steps:
+- [x] Create TODO.md with plan steps
+- [x] Edit src/app/components/Nllm.tsx to fix TS/JSX errors
+- [ ] Start Next.js dev server with `npm run dev`
+- [ ] Verify http://localhost:3000/nllm works
+- [ ] Test functionality (input submission to /api/query)
+- [ ] Mark complete
+

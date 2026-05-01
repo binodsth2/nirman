@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model user {
+  id       String  @id @default(cuid())
+  email    String  @unique
+  password String
+  name     String
+  role     Role?    @default(USER)
+  teamId   String?
+  team     Team?   @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  //time stamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  //Indexes
+  @@index([email])
+  @@index([role])
+  @@index([teamId])
+  //map
+  @@map("users")
+}
+
+model Team {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  description String?
+  code        String  @unique
+
+  //time stamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  users     user[]
+
+  //map
+  @@map("teams")
+}
+
+
+model Query {
+  id        String  @id @default(cuid())
+  input     String  @db.Text
+  inputflag Boolean @default(false) 
+  //false xa bhane database khali xa if true xa bhane database is occupied
+  output    String? @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  //@@map("queries")
+}
+
+
+enum Role {
+  ADMIN
+  MANAGER
+  USER
+  GUEST
+}

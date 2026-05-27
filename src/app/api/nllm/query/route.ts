@@ -38,7 +38,7 @@ export async function POST(req: Request) {
       data: newQuery, // rethink and confirm it later
     });
 
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

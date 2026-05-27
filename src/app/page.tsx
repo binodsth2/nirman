@@ -1,9 +1,9 @@
-import Signup from "@/app/components/Signup";
+import ChatInterface from "@/app/components/ChatInterface/ChatInterface";
 
 export default function Home() {
     return (
         <>
-            <Signup />
+            <ChatInterface />
         </>
     )
 }

@@ -22,7 +22,7 @@ export default function GeneratePage() {
                 setQuery(null);
                 setMessage({ text: "No pending queries found. Keep relaxing!", type: "info" });
             }
-        } catch (error) {
+        } catch {
             setMessage({ text: "Error checking for queries.", type: "error" });
         } finally {
             setLoading(false);
@@ -49,7 +49,7 @@ export default function GeneratePage() {
             } else {
                 setMessage({ text: result.error, type: "error" });
             }
-        } catch (error) {
+        } catch {
             setMessage({ text: "Error sending response.", type: "error" });
         } finally {
             setLoading(false);
@@ -108,7 +108,7 @@ export default function GeneratePage() {
                                 User Query
                             </p>
                             <p className="text-xl text-white font-medium leading-relaxed pl-1">
-                                "{query.input}"
+                                {query.input}
                             </p>
                         </div>
 
@@ -146,7 +146,7 @@ export default function GeneratePage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
                         </svg>
                         <p className="text-xl font-medium text-slate-300 tracking-wide">Queue is empty</p>
-                        <p className="text-sm text-slate-500 mt-2">Press 'Check Network' to scan for incoming user queries.</p>
+                        <p className="text-sm text-slate-500 mt-2">Press&apos;Check Network&apos; to scan for incoming user queries.</p>
                     </div>
                 )}
             </div>

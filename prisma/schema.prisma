@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
 }
 
 model user {
@@ -11,8 +11,9 @@ model user {
   email    String  @unique
   password String
   name     String
-  role     Role?    @default(USER)
+  role     Role?   @default(USER)
   teamId   String?
+  imageUrl String? // Path or URL to the image file
   team     Team?   @relation(fields: [teamId], references: [id], onDelete: Cascade)
 
   //time stamps
@@ -42,19 +43,17 @@ model Team {
   @@map("teams")
 }
 
-
 model Query {
-  id        String  @id @default(cuid())
-  input     String  @db.Text
-  inputflag Boolean @default(false) 
+  id        String   @id @default(cuid())
+  input     String   @db.Text
+  inputflag Boolean  @default(false)
   //false xa bhane database khali xa if true xa bhane database is occupied
-  output    String? @db.Text
+  output    String?  @db.Text
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   //@@map("queries")
 }
-
 
 enum Role {
   ADMIN

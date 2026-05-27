@@ -7,7 +7,7 @@ CREATE TABLE "users" (
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "role" "Role" NOT NULL DEFAULT 'USER',
+    "role" "Role" DEFAULT 'USER',
     "teamId" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
@@ -25,6 +25,18 @@ CREATE TABLE "teams" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "teams_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Query" (
+    "id" TEXT NOT NULL,
+    "input" TEXT NOT NULL,
+    "inputflag" BOOLEAN NOT NULL DEFAULT false,
+    "output" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Query_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

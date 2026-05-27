@@ -1,7 +1,7 @@
-import Nllm from "@/app/components/Nllm";
+import ChatInterface from "@/app/components/ChatInterface/ChatInterface";
 
 export default function Home() {
     return (
-        <Nllm />
+        <ChatInterface />
     )
 }
